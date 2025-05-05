@@ -21,7 +21,7 @@ const Home = ({ token }) => {
     if (!token) return alert('Please log in to add to cart.');
 
     try {
-      await axios.post('https://your-api.onrender.com/cart', {
+      await axios.post('https://bsod-webapi.onrender.com/cart', {
         itemId,
         quantity: 1
       }, {
@@ -39,8 +39,10 @@ const Home = ({ token }) => {
       <div className="item-grid">
         {items.map(item => (
           <div key={item._id} className="item-card">
+            <img src={item.imageUrl} alt={item.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
+            <p>{item.description}</p>
             <button onClick={() => handleAddToCart(item._id)}>Add to Cart</button>
           </div>
         ))}
