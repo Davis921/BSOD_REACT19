@@ -39,7 +39,14 @@ const Home = ({ token }) => {
       <div className="item-grid">
         {items.map(item => (
           <div key={item._id} className="item-card">
-            <img src={item.imageUrl} alt={item.name} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+            <img
+              src={encodeURI(item.imageUrl)}
+              alt={item.name}
+              style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/200x200?text=No+Image';
+              }}
+            />
             <h3>{item.name}</h3>
             <p>${item.price}</p>
             <p>{item.description}</p>
