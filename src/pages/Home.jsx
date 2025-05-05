@@ -42,7 +42,14 @@ const Home = ({ token }) => {
             <img
               src={encodeURI(item.imageUrl)}
               alt={item.name}
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+              style={{
+                width: '100%',
+                maxWidth: '300px',
+                height: 'auto',
+                objectFit: 'contain',
+                display: 'block',
+                margin: '0 auto'
+              }}              
               onError={(e) => {
                 e.target.src = 'https://via.placeholder.com/200x200?text=No+Image';
               }}
