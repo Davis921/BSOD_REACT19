@@ -11,7 +11,7 @@ const Login = ({ onLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://your-api.onrender.com/login', { email, password });
+      const res = await axios.post('https://bsod-webapi.onrender.com/login', { email, password });
       onLogin(res.data.token);
       navigate('/');
     } catch (err) {

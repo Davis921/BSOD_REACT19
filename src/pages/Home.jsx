@@ -8,7 +8,7 @@ const Home = ({ token }) => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const res = await axios.get('https://your-api.onrender.com/items');
+        const res = await axios.get('https://bsod-webapi.onrender.com/items');
         setItems(res.data);
       } catch (err) {
         console.error('Error fetching items:', err);

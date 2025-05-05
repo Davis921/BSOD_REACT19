@@ -7,7 +7,7 @@ const Cart = ({ token }) => {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get('https://your-api.onrender.com/cart', {
+      const res = await axios.get('https://bsod-webapi.onrender.com/cart', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart(res.data);
@@ -18,7 +18,7 @@ const Cart = ({ token }) => {
 
   const updateQuantity = async (itemId, quantity) => {
     try {
-      await axios.put('https://your-api.onrender.com/cart', { itemId, quantity }, {
+      await axios.put('https://bsod-webapi.onrender.com/cart', { itemId, quantity }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchCart();
@@ -29,7 +29,7 @@ const Cart = ({ token }) => {
 
   const clearCart = async () => {
     try {
-      await axios.delete('https://your-api.onrender.com/cart', {
+      await axios.delete('https://bsod-webapi.onrender.com/cart', {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchCart();

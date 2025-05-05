@@ -12,7 +12,7 @@ const Signup = ({ onSignup }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://your-api.onrender.com/signup', { name, email, password });
+      const res = await axios.post('https://bsod-webapi.onrender.com/signup', { name, email, password });
       onSignup(res.data.token);
       navigate('/');
     } catch (err) {

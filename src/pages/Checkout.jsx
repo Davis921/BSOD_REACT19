@@ -8,7 +8,7 @@ const Checkout = ({ token }) => {
 
   const handleCheckout = async () => {
     try {
-      const res = await axios.post('https://your-api.onrender.com/checkout', {}, {
+      const res = await axios.post('https://bsod-webapi.onrender.com/checkout', {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Order placed successfully!');
